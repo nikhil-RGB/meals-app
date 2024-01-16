@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/data/dummy_data.dart';
+import 'package:meals_app/pages/MealsScreen';
 import 'package:meals_app/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -21,6 +22,18 @@ class CategoriesScreen extends StatelessWidget {
           children: [
             ...availableCategories.map((item) => CategoryItem(category: item)),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MealsScreen(
+                    title: "We have some meals!",
+                    meals: dummyMeals,
+                  ),
+                ));
+          },
         ),
       ),
     );
