@@ -23,7 +23,12 @@ class CategoriesScreen extends StatelessWidget {
             ...availableCategories.map((item) => CategoryItem(category: item)),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton.extended(
+          label: Text("All Meals",
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.bold,
+                  )),
+          icon: const Icon(Icons.food_bank_rounded),
           onPressed: () {
             Navigator.push(
                 context,
