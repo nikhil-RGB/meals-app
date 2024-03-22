@@ -3,12 +3,16 @@ import 'package:meals_app/models/Categories.dart';
 
 class CategoryItem extends StatelessWidget {
   final Categories category;
-  const CategoryItem({super.key, required this.category});
+  final void Function() onSelected;
+  const CategoryItem(
+      {super.key, required this.category, required this.onSelected});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        onSelected();
+      },
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(16.0),
       child: Container(
