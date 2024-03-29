@@ -9,6 +9,7 @@ class MealsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
    return SafeArea(
     child:Scaffold(
+      backgroundColor:Colors.black,
       appBar:AppBar(title:Text(this.title),),
       body: meals.isEmpty?Center(child:Text("No meals available!",style:TextStyle(color:Colors.white,fontSize:26,)),):
       ListView.builder(
