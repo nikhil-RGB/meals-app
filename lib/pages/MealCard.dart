@@ -5,6 +5,7 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:meals_app/models/MealInformationScreen.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/pages/MealItemTrait.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -77,7 +78,13 @@ class MealCard extends StatelessWidget {
       margin: const EdgeInsets.all(10.0),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) {
+              return MealInformationScreen(meal: meal);
+            },
+          ));
+        },
         child: Stack(
           children: [
             FadeInImage(
